@@ -1,6 +1,7 @@
 ﻿using Petshop.Core.Entity;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Petshop.Infrastructure.Data
@@ -18,8 +19,8 @@ namespace Petshop.Infrastructure.Data
                     Id = PetId++,
                     Name = "Snoopy",
                     Type = PetType.Dog,
-                    BirthDate = Convert.ToDateTime("01/01/2000"),
-                    SoldDate = Convert.ToDateTime("24/12/2000"),
+                    BirthDate = DateTime.Now,
+                    SoldDate = DateTime.Parse("12 Juni 2008", new CultureInfo("da-DK")),
                     Color = "White",
                     PreviousOwner = "Bob",
                     Price = 50
@@ -31,8 +32,8 @@ namespace Petshop.Infrastructure.Data
                     Id = PetId++,
                     Name = "Garfield",
                     Type = PetType.Cat,
-                    BirthDate = Convert.ToDateTime("01/01/2000"),
-                    SoldDate = Convert.ToDateTime("24/12/2000"),
+                    BirthDate = DateTime.Parse("12 Juni 2008", new CultureInfo("da-DK")),
+                    SoldDate = DateTime.Parse("12 Juni 2008", new CultureInfo("da-DK")),
                     Color = "Orange",
                     PreviousOwner = "Jon Arbuckle",
                     Price = 10
@@ -44,8 +45,8 @@ namespace Petshop.Infrastructure.Data
                     Id = PetId++,
                     Name = "Bugs Bunny",
                     Type = PetType.Rabbit,
-                    BirthDate = Convert.ToDateTime("01/01/2000"),
-                    SoldDate = Convert.ToDateTime("24/12/2000"),
+                    BirthDate = DateTime.Parse("12 Juni 2008", new CultureInfo("da-DK")),
+                    SoldDate = DateTime.Parse("12 Juni 2008", new CultureInfo("da-DK")),
                     Color = "Grey/White",
                     PreviousOwner = "None",
                     Price = 100

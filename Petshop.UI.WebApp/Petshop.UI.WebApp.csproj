@@ -2,7 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>b4e1f483-22c9-4c20-8f76-5e3ba5c7a809</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Petshop.Core\Petshop.Core.csproj" />
+    <ProjectReference Include="..\Petshop.Infrastructure.Data\Petshop.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Properties\ServiceDependencies\" />
+  </ItemGroup>
 
 
 </Project>

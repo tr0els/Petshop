@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Petshop.Core.ApplicationServices;
+using Petshop.Core.ApplicationServices.Impl;
+using Petshop.Core.DomainServices;
+using Petshop.Infrastructure.Data;
 
 namespace Petshop.UI.WebApp
 {
@@ -25,6 +29,10 @@ namespace Petshop.UI.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Dependency injection of needed repositories and services
+            services.AddScoped<IPetRepository, PetRepository>();
+            services.AddScoped<IPetService, PetService>();
+
             services.AddControllers();
         }
 
@@ -46,6 +54,9 @@ namespace Petshop.UI.WebApp
             {
                 endpoints.MapControllers();
             });
+
+            // Init data
+            FakeDB.InitData();
         }
     }
 }
