@@ -48,11 +48,15 @@ namespace Petshop.UI.WebApp.Controllers
 
         // PUT api/pets/5
         [HttpPut("{id}")]
-        public Pet Put([FromBody] Pet pet)
+        public Pet Put(int id, [FromBody] Pet pet)
         {
-            // update method us not currently using an id
+            // update pet with id from url
+            pet.Id = id;
+
             Pet petUpdated = _petService.Update(pet);
             return petUpdated;
+            
+
         }
 
         // DELETE api/pets/5
