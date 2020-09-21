@@ -40,8 +40,7 @@ namespace Petshop.Core.ApplicationServices.Impl
             ValidatePetData(pet);
             Pet petUpdated = _petRepository.Update(pet);
             if (petUpdated is null) throw new KeyNotFoundException($"No record with id {pet.Id} was found.");
-
-            return _petRepository.Update(pet);
+            return petUpdated;
         }
 
         public Pet Delete(int id)
@@ -49,7 +48,7 @@ namespace Petshop.Core.ApplicationServices.Impl
             if (id < 1) throw new ArgumentException($"Id must be a positive integer.");
             Pet pet = _petRepository.Delete(id);
             if (pet is null) throw new KeyNotFoundException($"No record with id {id} was found.");
-            return _petRepository.Delete(id);
+            return pet;
         }
 
         public IEnumerable<Pet> SearchByType(string type)
