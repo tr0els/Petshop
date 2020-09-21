@@ -9,10 +9,34 @@ namespace Petshop.Infrastructure.Data
     public static class FakeDB
     {
         public static int PetId = 1;
+        public static int OwnerId = 1;
         public static List<Pet> PetTable = new List<Pet>();
+        public static List<Owner> OwnerTable = new List<Owner>();
 
         public static void InitData()
         {
+            OwnerTable.Add(
+                new Owner
+                {
+                    Id = OwnerId++,
+                    FirstName = "Blondie",
+                    LastName = "The Good", 
+                    Address = "Sad Hill Cemetery The Unmarked Grave", 
+                    Phone = "555-GoldAndGuns", 
+                    Email = "spaghettiwestern@sergioleone.it"
+                });
+
+            OwnerTable.Add(
+                new Owner
+                {
+                    Id = OwnerId++,
+                    FirstName = "John",
+                    LastName = "McClane",
+                    Address = "Classified",
+                    Phone = "Classified",
+                    Email = "yippee-ki-yay@nypd.com"
+                });
+
             PetTable.Add(
                 new Pet
                 {
