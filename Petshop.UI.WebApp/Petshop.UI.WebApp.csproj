@@ -7,12 +7,20 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Petshop.Core\Petshop.Core.csproj" />
-    <ProjectReference Include="..\Petshop.Infrastructure.Data\Petshop.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Petshop.Infrastructure.Data\Petshop.Infrastructure.Static.Data.csproj" />
+    <ProjectReference Include="..\Petshop.Infrastructure.DBInit\Petshop.Infrastructure.DBInit.csproj" />
+    <ProjectReference Include="..\Petshop.Infrastructure.SQLite.Data\Petshop.Infrastructure.SQLite.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Properties\ServiceDependencies\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
   </ItemGroup>
 
 

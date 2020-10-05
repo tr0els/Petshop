@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Petshop.Core.ApplicationServices;
 using Petshop.Core.Entity;
+using Petshop.Core.Filter;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,14 +24,16 @@ namespace Petshop.UI.WebApp.Controllers
 
         // GET: api/owners
         [HttpGet]
-        public ActionResult<IEnumerable<Owner>> Get()
+        public ActionResult<FilteredList<Owner>> Get([FromQuery] Filter filter)
         {
             try
             {
-                IEnumerable<Owner> owners = _ownerService.ReadAll();
+                var filteredList = _ownerService.ReadAll(filter);
+                var list = filteredList.List;
 
-                if (!owners.Any()) return NoContent();
-                return Ok(owners);
+                // TODO: implement the usage of DTOs
+                if (!filteredList.List.Any()) return NoContent();
+                return Ok(filteredList);
             }
             catch (Exception e)
             {

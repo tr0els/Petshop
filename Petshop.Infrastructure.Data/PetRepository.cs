@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Petshop.Core.Entity;
+using Petshop.Core.Filter;
 
 namespace Petshop.Infrastructure.Data
 {
@@ -73,6 +74,11 @@ namespace Petshop.Infrastructure.Data
             {
                 throw new InvalidFilterCriteriaException("type invalid");
             }
+        }
+
+        FilteredList<Pet> IPetRepository.ReadAll(Filter filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

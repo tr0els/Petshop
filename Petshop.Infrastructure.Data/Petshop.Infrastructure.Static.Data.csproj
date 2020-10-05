@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Petshop.Core.Entity\Petshop.Core.Entity.csproj" />
-    <ProjectReference Include="..\Petshop.Core.Filter\Petshop.Core.Filter.csproj" />
+    <ProjectReference Include="..\Petshop.Core\Petshop.Core.csproj" />
   </ItemGroup>
 
 </Project>

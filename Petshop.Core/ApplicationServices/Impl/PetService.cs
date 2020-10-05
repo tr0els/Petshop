@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Petshop.Core.DomainServices;
+using Petshop.Core.Filter;
 
 namespace Petshop.Core.ApplicationServices.Impl
 {
@@ -16,9 +17,10 @@ namespace Petshop.Core.ApplicationServices.Impl
         {
             this._petRepository = repository;
         }
-        public List<Pet> ReadAll()
+
+        public FilteredList<Pet> ReadAll(Filter.Filter filter)
         {
-            return _petRepository.ReadAll().ToList();
+            return _petRepository.ReadAll(filter);
         }
 
         public Pet Read(int id)
@@ -51,21 +53,6 @@ namespace Petshop.Core.ApplicationServices.Impl
             return pet;
         }
 
-        public IEnumerable<Pet> SearchByType(string type)
-        {
-            return _petRepository.SearchByType(type);
-        }
-
-        public IEnumerable<Pet> SortByPrice(IEnumerable<Pet> pets, string order)
-        {
-            return _petRepository.SortByPrice(pets, order);
-        }
-
-        public IEnumerable<Pet> TopXCheapest(IEnumerable<Pet> pets, int amount)
-        {
-            return _petRepository.TopXCheapest(pets, amount);
-        }
-
         private void ValidatePetData(Pet pet)
         {
             if (string.IsNullOrEmpty(pet.Name) || pet.Name.Length< 2) throw new ArgumentException("Name must be minimum 2 characters long.");
@@ -74,7 +61,7 @@ namespace Petshop.Core.ApplicationServices.Impl
             if (DateTime.Compare(pet.BirthDate, DateTime.Now) > 0) throw new ArgumentException("Birth date must be in the past.");
             if (!DateTime.TryParse(pet.SoldDate.ToString(), out _)) throw new ArgumentException("Sold date invalid format."); // service check - api controller validates date first
             if (DateTime.Compare(pet.SoldDate, DateTime.Now) > 0) throw new ArgumentException("Sold date must be in the past.");
-            if (pet.Price< 0) throw new ArgumentException("Price must be an integer greater than or equal to 0.");
+            if (pet.Price < 0) throw new ArgumentException("Price must be an integer greater than or equal to 0.");
         }
 }
 }

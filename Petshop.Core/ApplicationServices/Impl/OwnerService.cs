@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Petshop.Core.DomainServices;
+using Petshop.Core.Filter;
 
 namespace Petshop.Core.ApplicationServices.Impl
 {
@@ -15,9 +16,9 @@ namespace Petshop.Core.ApplicationServices.Impl
         {
             this._ownerRepository = repository;
         }
-        public List<Owner> ReadAll()
+        public FilteredList<Owner> ReadAll(Filter.Filter filter)
         {
-            return _ownerRepository.ReadAll().ToList();
+            return _ownerRepository.ReadAll(filter);
         }
 
         public Owner Read(int id)

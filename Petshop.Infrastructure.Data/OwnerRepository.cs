@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Petshop.Core.Entity;
+using Petshop.Core.Filter;
 
 namespace Petshop.Infrastructure.Data
 {
@@ -45,6 +46,11 @@ namespace Petshop.Infrastructure.Data
             var toRemove = FakeDB.OwnerTable.FirstOrDefault(owner => owner.Id == id);
             FakeDB.OwnerTable.Remove(toRemove);
             return toRemove;
+        }
+
+        public FilteredList<Owner> ReadAll(Filter filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

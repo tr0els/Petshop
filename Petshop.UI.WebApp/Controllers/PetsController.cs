@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Petshop.Core.ApplicationServices;
 using Petshop.Core.Entity;
+using Petshop.Core.Filter;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,14 +24,15 @@ namespace Petshop.UI.WebApp.Controllers
 
         // GET: api/pets
         [HttpGet]
-        public ActionResult<IEnumerable<Pet>> Get()
+        public ActionResult<FilteredList<Pet>> Get([FromQuery] Filter filter)
         {
             try
             {
-                IEnumerable<Pet> pets = _petService.ReadAll();
+                var filteredList = _petService.ReadAll(filter);
 
-                if (!pets.Any()) return NoContent();
-                return Ok(pets);
+                // TODO: implement the usage of DTOs
+                if (filteredList.TotalCount == 0) return NoContent();
+                return Ok(filteredList);
             }
             catch (Exception e)
             {
@@ -42,7 +44,8 @@ namespace Petshop.UI.WebApp.Controllers
         [HttpGet("{id}")]
         public ActionResult<Pet> Get(int id)
         {
-            try {
+            try 
+            {
                 return Ok(_petService.Read(id));
             }
             catch (KeyNotFoundException e)

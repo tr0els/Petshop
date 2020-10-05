@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Core", "Petshop.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Core.Entity", "Petshop.Core.Entity\Petshop.Core.Entity.csproj", "{C06A44E1-A1DA-4F54-8585-52EEA0780C46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Infrastructure.Data", "Petshop.Infrastructure.Data\Petshop.Infrastructure.Data.csproj", "{CC5274E7-988C-45D3-8528-8AFF960AD00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Infrastructure.Static.Data", "Petshop.Infrastructure.Data\Petshop.Infrastructure.Static.Data.csproj", "{CC5274E7-988C-45D3-8528-8AFF960AD00E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{AAE4B164-85F0-49FF-9027-561147E40686}"
 EndProject
@@ -17,7 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64A43487-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E394704F-86AB-43B5-94CB-A86FB74EFE5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petshop.UI.WebApp", "Petshop.UI.WebApp\Petshop.UI.WebApp.csproj", "{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.UI.WebApp", "Petshop.UI.WebApp\Petshop.UI.WebApp.csproj", "{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Infrastructure.SQLite.Data", "Petshop.Infrastructure.SQLite.Data\Petshop.Infrastructure.SQLite.Data.csproj", "{B0A06D96-C0F3-4908-B43C-410C54478ACD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Core.Filter", "Petshop.Core.Filter\Petshop.Core.Filter.csproj", "{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.Infrastructure.DBInit", "Petshop.Infrastructure.DBInit\Petshop.Infrastructure.DBInit.csproj", "{A50D7780-F620-4502-BA79-883D846AC0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petshop.Infrastructure.Helpers", "Petshop.Infrastructure.Helpers\Petshop.Infrastructure.Helpers.csproj", "{7BCB314A-2051-4BCA-89A7-D360C93F140A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A06D96-C0F3-4908-B43C-410C54478ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A06D96-C0F3-4908-B43C-410C54478ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A06D96-C0F3-4908-B43C-410C54478ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A06D96-C0F3-4908-B43C-410C54478ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50D7780-F620-4502-BA79-883D846AC0A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50D7780-F620-4502-BA79-883D846AC0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50D7780-F620-4502-BA79-883D846AC0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50D7780-F620-4502-BA79-883D846AC0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCB314A-2051-4BCA-89A7-D360C93F140A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCB314A-2051-4BCA-89A7-D360C93F140A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCB314A-2051-4BCA-89A7-D360C93F140A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCB314A-2051-4BCA-89A7-D360C93F140A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +79,10 @@ Global
 		{C06A44E1-A1DA-4F54-8585-52EEA0780C46} = {64A43487-CDC9-4D94-ABFB-0D589FFC224A}
 		{CC5274E7-988C-45D3-8528-8AFF960AD00E} = {E394704F-86AB-43B5-94CB-A86FB74EFE5D}
 		{E3535C99-2D67-4C4E-B3C8-2784A24AC4CD} = {AAE4B164-85F0-49FF-9027-561147E40686}
+		{B0A06D96-C0F3-4908-B43C-410C54478ACD} = {E394704F-86AB-43B5-94CB-A86FB74EFE5D}
+		{FF0A68DD-97B6-4A8E-92F1-1137DDDC1958} = {64A43487-CDC9-4D94-ABFB-0D589FFC224A}
+		{A50D7780-F620-4502-BA79-883D846AC0A2} = {E394704F-86AB-43B5-94CB-A86FB74EFE5D}
+		{7BCB314A-2051-4BCA-89A7-D360C93F140A} = {E394704F-86AB-43B5-94CB-A86FB74EFE5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20D2A676-16CD-4F57-9E0D-297744494066}
